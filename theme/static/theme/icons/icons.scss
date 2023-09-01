@@ -2,11 +2,11 @@ $icons-font: "icons";
 
 @font-face {
   font-family: $icons-font;
-  src: url("./theme/icons/icons.eot?cc13e0ba6655bb83b1172291b4d6bab8#iefix")
+  src: url("../theme/icons/icons.eot?cc13e0ba6655bb83b1172291b4d6bab8#iefix")
       format("embedded-opentype"),
-    url("./theme/icons/icons.woff2?cc13e0ba6655bb83b1172291b4d6bab8")
+    url("../theme/icons/icons.woff2?cc13e0ba6655bb83b1172291b4d6bab8")
       format("woff2"),
-    url("./theme/icons/icons.woff?cc13e0ba6655bb83b1172291b4d6bab8")
+    url("../theme/icons/icons.woff?cc13e0ba6655bb83b1172291b4d6bab8")
       format("woff");
 }
 
