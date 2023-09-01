@@ -1,0 +1,31 @@
+$icons-font: "icons";
+
+@font-face {
+  font-family: $icons-font;
+  src: url("./theme/icons/icons.eot?cc13e0ba6655bb83b1172291b4d6bab8#iefix")
+      format("embedded-opentype"),
+    url("./theme/icons/icons.woff2?cc13e0ba6655bb83b1172291b4d6bab8")
+      format("woff2"),
+    url("./theme/icons/icons.woff?cc13e0ba6655bb83b1172291b4d6bab8")
+      format("woff");
+}
+
+i[class^="icon-"]:before,
+i[class*=" icon-"]:before {
+  font-family: icons !important;
+  font-style: normal;
+  font-weight: normal !important;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+$icons-map: (
+  "house": "\f101",
+);
+
+.icon-house:before {
+  content: map-get($icons-map, "house");
+}
