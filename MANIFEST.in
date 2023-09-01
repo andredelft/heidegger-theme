@@ -1,4 +1,1 @@
-include theme/_index.scss
-recursive-include theme/fonts *
-recursive-include theme/icons *
-recursive-include theme/scss *
+recursive-include theme/static *
