@@ -35,3 +35,57 @@
     }
   }
 }
+
+.menu-button {
+  position: fixed;
+  bottom: 1rem;
+  right: 1rem;
+  width: 60px;
+  line-height: 0.5;
+  font-size: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  text-decoration: none;
+
+  @include breakpoint(sm) {
+    position: sticky;
+    margin: 20px 20px 0 auto;
+    width: 80px;
+    top: 2rem;
+    bottom: auto;
+    font-size: 40px;
+  }
+
+  color: $theme-600;
+  -webkit-backdrop-filter: blur(4px);
+  backdrop-filter: blur(4px);
+  background-color: transparentize($theme-200, 0.5);
+  transition: $transition-colors;
+  background-clip: border-box;
+
+  @include dark {
+    color: $theme-400;
+    background-color: transparentize($theme-600, 0.7);
+  }
+
+  &:hover {
+    color: $theme-700;
+    background-color: transparentize($theme-300, 0.5);
+
+    @include dark {
+      background-color: transparentize($theme-500, 0.7);
+      color: $theme-200;
+    }
+  }
+
+  &:active {
+    background-color: transparentize($theme-500, 0.5);
+
+    @include dark {
+      background-color: transparentize($theme-300, 0.7);
+    }
+  }
+}
