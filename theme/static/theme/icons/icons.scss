@@ -1,31 +1,35 @@
 $icons-font: "icons";
 
 @font-face {
-  font-family: $icons-font;
-  src: url("../theme/icons/icons.eot?cc13e0ba6655bb83b1172291b4d6bab8#iefix")
-      format("embedded-opentype"),
-    url("../theme/icons/icons.woff2?cc13e0ba6655bb83b1172291b4d6bab8")
-      format("woff2"),
-    url("../theme/icons/icons.woff?cc13e0ba6655bb83b1172291b4d6bab8")
-      format("woff");
+    font-family: $icons-font;
+    src: url("../theme/icons/icons.eot?8c7c880290b05445a59343dfd78e83b4#iefix") format("embedded-opentype"),
+url("../theme/icons/icons.woff2?8c7c880290b05445a59343dfd78e83b4") format("woff2"),
+url("../theme/icons/icons.woff?8c7c880290b05445a59343dfd78e83b4") format("woff");
 }
 
-i[class^="icon-"]:before,
-i[class*=" icon-"]:before {
-  font-family: icons !important;
-  font-style: normal;
-  font-weight: normal !important;
-  font-variant: normal;
-  text-transform: none;
-  line-height: 1;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+i[class^="icon-"]:before, i[class*=" icon-"]:before {
+    font-family: icons !important;
+    font-style: normal;
+    font-weight: normal !important;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
 
 $icons-map: (
-  "house": "\f101",
+    "book-open-text": "\f101",
+    "bookmarks-simple": "\f102",
+    "house": "\f103",
 );
 
+.icon-book-open-text:before {
+    content: map-get($icons-map, "book-open-text");
+}
+.icon-bookmarks-simple:before {
+    content: map-get($icons-map, "bookmarks-simple");
+}
 .icon-house:before {
-  content: map-get($icons-map, "house");
+    content: map-get($icons-map, "house");
 }
