@@ -7,7 +7,9 @@ url("../theme/icons/icons.woff2?8c7c880290b05445a59343dfd78e83b4") format("woff2
 url("../theme/icons/icons.woff?8c7c880290b05445a59343dfd78e83b4") format("woff");
 }
 
-i[class^="icon-"]:before, i[class*=" icon-"]:before {
+i[class^="icon-"], i[class*=" icon-"] {
+  display: inline-flex;
+  &::before {
     font-family: icons !important;
     font-style: normal;
     font-weight: normal !important;
@@ -16,6 +18,7 @@ i[class^="icon-"]:before, i[class*=" icon-"]:before {
     line-height: 1;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+  }
 }
 
 $icons-map: (

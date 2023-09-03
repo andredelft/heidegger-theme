@@ -18,4 +18,4 @@ Voor de icoontjes genereren we een eigen icon font van de SVG'tjes die we gebrui
    npm run generate-icons
    ```
 
-3. De fonts en stylesheet zijn nu geüpdatet. Commit alles mee.
+3. De fonts en stylesheet zijn nu geüpdatet. Voeg alle wijzigingen toe aan de commit.
