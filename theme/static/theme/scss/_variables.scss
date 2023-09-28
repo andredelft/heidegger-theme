@@ -2,7 +2,7 @@ $white: #fff;
 $black: #000;
 
 $gradient-step-size: 11% !default;
-$theme-color: #0ea5e9 !default; // sky-500
+$theme-color: #4338ca !default; // indigo-500
 
 $theme-50: lighten($theme-color, 4.3 * $gradient-step-size);
 $theme-100: lighten($theme-color, 4 * $gradient-step-size);

@@ -3,7 +3,8 @@
   font-family: "Alegreya Greek";
   font-style: italic;
   font-weight: 400 700;
-  src: url("../theme/fonts/alegreya-greek-ext-italic.woff2") format("woff2");
+  // We purposefully force the italic variant to use the normal font, because the old greek script shouldn't use italics
+  src: url("../theme/fonts/alegreya-greek-ext-normal.woff2") format("woff2");
   unicode-range: U+1F00-1FFF;
 }
 /* greek */
@@ -11,7 +12,7 @@
   font-family: "Alegreya Greek";
   font-style: italic;
   font-weight: 400 700;
-  src: url("../theme/fonts/alegreya-greek-italic.woff2") format("woff2");
+  src: url("../theme/fonts/alegreya-greek-normal.woff2") format("woff2");
   unicode-range: U+0370-03FF;
 }
 /* greek-ext */

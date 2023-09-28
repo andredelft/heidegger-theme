@@ -1,0 +1,86 @@
+.badge {
+  border-radius: 0.3em;
+  padding: 0.05em 0.2em;
+  font-size: 0.9em;
+  white-space: nowrap;
+  font-weight: 500;
+
+  color: $theme-700;
+  border: 1.5px solid $theme-200;
+  background-color: $theme-100;
+
+  @include dark {
+    color: $theme-200;
+    border-color: $theme-700;
+    background-color: $theme-900;
+  }
+
+  &--secondary {
+    color: $slate-800;
+    border: 1.5px solid $slate-300;
+    background-color: $slate-100;
+
+    @include dark {
+      color: $slate-300;
+      border-color: $slate-700;
+      background-color: $slate-800;
+    }
+  }
+
+  &--large {
+    font-size: 1.2em;
+  }
+}
+
+a.badge,
+button.badge {
+  text-decoration: none;
+  transition: $transition-colors;
+  &:hover,
+  &:focus {
+    color: $theme-800;
+    border-color: $theme-600;
+    background-color: $theme-100;
+
+    @include dark {
+      color: $theme-100;
+      border-color: $theme-600;
+      background-color: $theme-900;
+    }
+  }
+
+  &:active {
+    background-color: $theme-300;
+
+    @include dark {
+      background-color: $theme-800;
+    }
+  }
+
+  &--secondary {
+    &:hover,
+    &:focus {
+      color: $theme-800;
+      border: 1.5px solid $theme-600;
+      background-color: $theme-100;
+
+      @include dark {
+        color: $theme-300;
+        border-color: $theme-800;
+        background-color: $theme-900;
+      }
+    }
+
+    &:active {
+      color: $theme-700;
+      border-color: $theme-600;
+      background-color: $theme-200;
+
+      @include dark {
+        color: $theme-200;
+        border-color: $theme-700;
+        background-color: $theme-900;
+      }
+    }
+  }
+}

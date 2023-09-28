@@ -5,7 +5,6 @@ $links-color: $slate-900;
 $bold-color: $slate-900;
 $counters-color: $slate-500;
 $bullets-color: $slate-300;
-$hr-color: $slate-200;
 $quotes-color: $slate-900;
 $quote-borders-color: $theme-400;
 $captions-color: $slate-500;
@@ -14,6 +13,7 @@ $pre-code-color: $slate-200;
 $pre-bg-color: $slate-800;
 $th-borders-color: $slate-300;
 $td-borders-color: $slate-200;
+$links-accent-color: $theme-500;
 $invert-body-color: $slate-300;
 $invert-headings-color: $white;
 $invert-lead-color: $slate-400;
@@ -21,7 +21,6 @@ $invert-links-color: $white;
 $invert-bold-color: $white;
 $invert-counters-color: $slate-400;
 $invert-bullets-color: $slate-600;
-$invert-hr-color: $slate-700;
 $invert-quotes-color: $slate-100;
 $invert-quote-borders-color: $theme-600;
 $invert-captions-color: $slate-400;
@@ -39,7 +38,6 @@ $invert-td-borders-color: $slate-700;
   --bold-color: #{$bold-color};
   --counters-color: #{$counters-color};
   --bullets-color: #{$bullets-color};
-  --hr-color: #{$hr-color};
   --quotes-color: #{$quotes-color};
   --quote-borders-color: #{$quote-borders-color};
   --captions-color: #{$captions-color};
@@ -48,6 +46,7 @@ $invert-td-borders-color: $slate-700;
   --pre-bg-color: #{$pre-bg-color};
   --th-borders-color: #{$th-borders-color};
   --td-borders-color: #{$td-borders-color};
+  --links-accent-color: #{$links-accent-color};
 
   @include dark {
     --body-color: #{$invert-body-color};
@@ -57,7 +56,6 @@ $invert-td-borders-color: $slate-700;
     --bold-color: #{$invert-bold-color};
     --counters-color: #{$invert-counters-color};
     --bullets-color: #{$invert-bullets-color};
-    --hr-color: #{$invert-hr-color};
     --quotes-color: #{$invert-quotes-color};
     --quote-borders-color: #{$invert-quote-borders-color};
     --captions-color: #{$invert-captions-color};
@@ -72,8 +70,6 @@ $invert-td-borders-color: $slate-700;
   font-size: 1.25rem;
   line-height: 1.8;
   color: var(--body-color);
-  scroll-behavior: smooth;
-  scroll-padding-top: 3rem;
 
   @include breakpoint(sm) {
     font-size: 1.5rem;
@@ -83,8 +79,23 @@ $invert-td-borders-color: $slate-700;
 
 a {
   color: var(--links-color);
-  text-decoration: underline $theme-500;
+  text-decoration: underline var(--links-accent-color);
   font-weight: 500;
+}
+
+@mixin link-unstyled {
+  color: inherit;
+  text-decoration: inherit;
+  font-weight: inherit;
+}
+
+@mixin link-hidden {
+  transition: text-decoration-color 300ms;
+  text-decoration-color: transparent;
+
+  &:hover {
+    text-decoration-color: var(--links-accent-color);
+  }
 }
 
 b,
@@ -143,7 +154,7 @@ ul > li::marker {
 hr {
   height: 0;
   color: inherit;
-  border-top-width: 1px;
+  border-top: 1px;
   margin-top: 2.8em;
   margin-bottom: 2.8em;
 
@@ -171,7 +182,8 @@ blockquote {
   }
 }
 
-h1 {
+h1,
+.h1 {
   color: var(--headings-color);
   font-weight: 800;
   font-size: 2.8em;
@@ -183,13 +195,14 @@ h1 {
     font-size: 2.6666667em;
     margin-bottom: 0.875em;
   }
+
+  strong {
+    font-weight: 900;
+  }
 }
 
-h1 strong {
-  font-weight: 900;
-}
-
-h2 {
+h2,
+.h2 {
   color: var(--headings-color);
   font-weight: 700;
   font-size: 1.8em;
@@ -203,13 +216,14 @@ h2 {
     margin-bottom: 0.8333333em;
     line-height: 1.0833333;
   }
+
+  strong {
+    font-weight: 800;
+  }
 }
 
-h2 strong {
-  font-weight: 800;
-}
-
-h3 {
+h3,
+.h3 {
   color: var(--headings-color);
   font-weight: 600;
   font-size: 1.5em;
@@ -223,16 +237,18 @@ h3 {
     margin-bottom: 0.6666667em;
     line-height: 1.2222222;
   }
+
+  strong {
+    font-weight: 700;
+  }
 }
 
-h3 strong {
-  font-weight: 700;
-}
-
-h4 {
+h4,
+.h4 {
   color: var(--headings-color);
   font-weight: 600;
   margin-top: 1.8em;
+  font-size: 1em;
   margin-bottom: 0.6em;
   line-height: 1.6;
 
@@ -241,10 +257,23 @@ h4 {
     margin-bottom: 0.6666667em;
     line-height: 1.5;
   }
+
+  strong {
+    font-weight: 700;
+  }
 }
 
-h4 strong {
-  font-weight: 700;
+h1,
+.h1,
+h2,
+.h2,
+h3,
+.h3,
+h4,
+.h4 {
+  &:first-child {
+    margin-top: 0;
+  }
 }
 
 figcaption {

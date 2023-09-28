@@ -5,12 +5,15 @@ ${{ name }}-font: "{{ name }}";
     src: {{{ fontSrc }}};
 }
 
-{{# if selector }}
-{{ selector }}:before {
-{{ else }}
-{{ tag }}[class^="{{prefix}}-"], {{ tag }}[class*=" {{prefix}}-"] {
-{{/ if }}
-  display: inline-flex;
+[class^="{{prefix}}-"], [class*=" {{prefix}}-"] {
+  display: flex;
+  align-items: center;
+  gap: 0.2em;
+
+  &:where(a, span, i) {
+    display: inline-flex;
+  }
+
   &::before {
     font-family: {{ name }} !important;
     font-style: normal;
@@ -31,9 +34,9 @@ ${{ name }}-map: (
 
 {{# each codepoints }}
 {{# if ../selector }}
-{{ ../selector }}.{{ ../prefix }}-{{ @key }}:before {
+{{ ../selector }}.{{ ../prefix }}-{{ @key }}::before {
 {{ else }}
-{{ tag }}.{{ ../prefix }}-{{ @key }}:before {
+{{ tag }}.{{ ../prefix }}-{{ @key }}::before {
 {{/ if }}
     content: map-get(${{ ../name }}-map, "{{ @key }}");
 }

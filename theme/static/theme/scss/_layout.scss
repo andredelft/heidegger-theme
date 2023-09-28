@@ -9,6 +9,23 @@ $breakpoints: (
 
 $gutter: 1rem;
 
+$border-color: $slate-200;
+$invert-border-color: $slate-700;
+
+:root {
+  --border-color: #{$border-color};
+
+  @include dark {
+    --border-color: #{$invert-border-color};
+  }
+
+  scroll-padding-top: 3rem;
+}
+
+.scroll-smooth {
+  scroll-behavior: smooth;
+}
+
 @mixin breakpoint($size) {
   @media (min-width: map-get($breakpoints, $size)) {
     @content;
@@ -19,9 +36,8 @@ $gutter: 1rem;
 ::before,
 ::after {
   box-sizing: border-box;
-  border-width: 0;
+  border: 0 solid var(--border-color);
   border-style: solid;
-  border-color: $slate-200;
 }
 
 body {
@@ -38,6 +54,10 @@ body {
   max-width: 65ch;
   padding: 0 $gutter;
   margin: auto;
+
+  &--relative {
+    position: relative;
+  }
 }
 
 @each $size, $value in $breakpoints {
@@ -46,4 +66,8 @@ body {
     padding: 0 $gutter;
     margin: auto;
   }
+}
+
+@function width($size) {
+  @return map-get($breakpoints, $size);
 }

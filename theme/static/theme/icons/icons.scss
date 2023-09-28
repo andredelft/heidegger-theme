@@ -2,13 +2,20 @@ $icons-font: "icons";
 
 @font-face {
     font-family: $icons-font;
-    src: url("../theme/icons/icons.eot?8c7c880290b05445a59343dfd78e83b4#iefix") format("embedded-opentype"),
-url("../theme/icons/icons.woff2?8c7c880290b05445a59343dfd78e83b4") format("woff2"),
-url("../theme/icons/icons.woff?8c7c880290b05445a59343dfd78e83b4") format("woff");
+    src: url("../theme/icons/icons.eot?0808b77cf3a5068442b901847be32092#iefix") format("embedded-opentype"),
+url("../theme/icons/icons.woff2?0808b77cf3a5068442b901847be32092") format("woff2"),
+url("../theme/icons/icons.woff?0808b77cf3a5068442b901847be32092") format("woff");
 }
 
-i[class^="icon-"], i[class*=" icon-"] {
-  display: inline-flex;
+[class^="icon-"], [class*=" icon-"] {
+  display: flex;
+  align-items: center;
+  gap: 0.2em;
+
+  &:where(a, span, i) {
+    display: inline-flex;
+  }
+
   &::before {
     font-family: icons !important;
     font-style: normal;
@@ -23,16 +30,68 @@ i[class^="icon-"], i[class*=" icon-"] {
 
 $icons-map: (
     "book-open-text": "\f101",
-    "bookmarks-simple": "\f102",
-    "house": "\f103",
+    "book-open": "\f102",
+    "book": "\f103",
+    "bookmarks-simple": "\f104",
+    "books": "\f105",
+    "caret-down": "\f106",
+    "caret-left": "\f107",
+    "caret-right": "\f108",
+    "caret-up": "\f109",
+    "circle-notch": "\f10a",
+    "export": "\f10b",
+    "house": "\f10c",
+    "link": "\f10d",
+    "magnifying-glass": "\f10e",
+    "notebook": "\f10f",
+    "user": "\f110",
 );
 
-.icon-book-open-text:before {
+.icon-book-open-text::before {
     content: map-get($icons-map, "book-open-text");
 }
-.icon-bookmarks-simple:before {
+.icon-book-open::before {
+    content: map-get($icons-map, "book-open");
+}
+.icon-book::before {
+    content: map-get($icons-map, "book");
+}
+.icon-bookmarks-simple::before {
     content: map-get($icons-map, "bookmarks-simple");
 }
-.icon-house:before {
+.icon-books::before {
+    content: map-get($icons-map, "books");
+}
+.icon-caret-down::before {
+    content: map-get($icons-map, "caret-down");
+}
+.icon-caret-left::before {
+    content: map-get($icons-map, "caret-left");
+}
+.icon-caret-right::before {
+    content: map-get($icons-map, "caret-right");
+}
+.icon-caret-up::before {
+    content: map-get($icons-map, "caret-up");
+}
+.icon-circle-notch::before {
+    content: map-get($icons-map, "circle-notch");
+}
+.icon-export::before {
+    content: map-get($icons-map, "export");
+}
+.icon-house::before {
     content: map-get($icons-map, "house");
+}
+.icon-link::before {
+    content: map-get($icons-map, "link");
+}
+.icon-magnifying-glass::before {
+    content: map-get($icons-map, "magnifying-glass");
+}
+.icon-notebook::before {
+    content: map-get($icons-map, "notebook");
+}
+.icon-user::before {
+    content: map-get($icons-map, "user");
 }
