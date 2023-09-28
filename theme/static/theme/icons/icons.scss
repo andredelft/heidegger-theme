@@ -2,9 +2,9 @@ $icons-font: "icons";
 
 @font-face {
     font-family: $icons-font;
-    src: url("../theme/icons/icons.eot?0808b77cf3a5068442b901847be32092#iefix") format("embedded-opentype"),
-url("../theme/icons/icons.woff2?0808b77cf3a5068442b901847be32092") format("woff2"),
-url("../theme/icons/icons.woff?0808b77cf3a5068442b901847be32092") format("woff");
+    src: url("../theme/icons/icons.eot?00093a7e5cd502548a7bf0fd7a89166b#iefix") format("embedded-opentype"),
+url("../theme/icons/icons.woff2?00093a7e5cd502548a7bf0fd7a89166b") format("woff2"),
+url("../theme/icons/icons.woff?00093a7e5cd502548a7bf0fd7a89166b") format("woff");
 }
 
 [class^="icon-"], [class*=" icon-"] {
@@ -43,8 +43,10 @@ $icons-map: (
     "house": "\f10c",
     "link": "\f10d",
     "magnifying-glass": "\f10e",
-    "notebook": "\f10f",
-    "user": "\f110",
+    "map-pin-line": "\f10f",
+    "map-pin": "\f110",
+    "notebook": "\f111",
+    "user": "\f112",
 );
 
 .icon-book-open-text::before {
@@ -88,6 +90,12 @@ $icons-map: (
 }
 .icon-magnifying-glass::before {
     content: map-get($icons-map, "magnifying-glass");
+}
+.icon-map-pin-line::before {
+    content: map-get($icons-map, "map-pin-line");
+}
+.icon-map-pin::before {
+    content: map-get($icons-map, "map-pin");
 }
 .icon-notebook::before {
     content: map-get($icons-map, "notebook");
