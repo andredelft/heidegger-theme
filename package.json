@@ -9,6 +9,6 @@
   "author": "André van Delft",
   "license": "ISC",
   "dependencies": {
-    "fantasticon": "^2.0.0"
+    "@twbs/fantasticon": "^3.0.0"
   }
 }
