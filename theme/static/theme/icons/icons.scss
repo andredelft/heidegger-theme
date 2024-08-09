@@ -2,9 +2,9 @@ $icons-font: "icons";
 
 @font-face {
     font-family: $icons-font;
-    src: url("../theme/icons/icons.eot?00093a7e5cd502548a7bf0fd7a89166b#iefix") format("embedded-opentype"),
-url("../theme/icons/icons.woff2?00093a7e5cd502548a7bf0fd7a89166b") format("woff2"),
-url("../theme/icons/icons.woff?00093a7e5cd502548a7bf0fd7a89166b") format("woff");
+    src: url("../theme/icons/icons.eot?bd9914ecf7c4bbc617d27038d3580a16#iefix") format("embedded-opentype"),
+url("../theme/icons/icons.woff2?bd9914ecf7c4bbc617d27038d3580a16") format("woff2"),
+url("../theme/icons/icons.woff?bd9914ecf7c4bbc617d27038d3580a16") format("woff");
 }
 
 [class^="icon-"], [class*=" icon-"] {
@@ -29,26 +29,33 @@ url("../theme/icons/icons.woff?00093a7e5cd502548a7bf0fd7a89166b") format("woff")
 }
 
 $icons-map: (
-    "book-open-text": "\f101",
-    "book-open": "\f102",
-    "book": "\f103",
-    "bookmarks-simple": "\f104",
-    "books": "\f105",
-    "caret-down": "\f106",
-    "caret-left": "\f107",
-    "caret-right": "\f108",
-    "caret-up": "\f109",
-    "circle-notch": "\f10a",
-    "export": "\f10b",
-    "house": "\f10c",
-    "link": "\f10d",
-    "magnifying-glass": "\f10e",
-    "map-pin-line": "\f10f",
-    "map-pin": "\f110",
-    "notebook": "\f111",
-    "user": "\f112",
+    "arrow-square-in": "\f101",
+    "arrow-square-out": "\f102",
+    "book-open-text": "\f103",
+    "book-open": "\f104",
+    "book": "\f105",
+    "bookmarks-simple": "\f106",
+    "books": "\f107",
+    "caret-down": "\f108",
+    "caret-left": "\f109",
+    "caret-right": "\f10a",
+    "caret-up": "\f10b",
+    "circle-notch": "\f10c",
+    "export": "\f10d",
+    "house": "\f10e",
+    "link": "\f10f",
+    "magnifying-glass": "\f110",
+    "map-pin-line": "\f111",
+    "notebook": "\f112",
+    "user": "\f113",
 );
 
+.icon-arrow-square-in::before {
+    content: map-get($icons-map, "arrow-square-in");
+}
+.icon-arrow-square-out::before {
+    content: map-get($icons-map, "arrow-square-out");
+}
 .icon-book-open-text::before {
     content: map-get($icons-map, "book-open-text");
 }
@@ -93,9 +100,6 @@ $icons-map: (
 }
 .icon-map-pin-line::before {
     content: map-get($icons-map, "map-pin-line");
-}
-.icon-map-pin::before {
-    content: map-get($icons-map, "map-pin");
 }
 .icon-notebook::before {
     content: map-get($icons-map, "notebook");
